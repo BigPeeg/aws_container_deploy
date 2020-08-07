@@ -1,0 +1,24 @@
+{
+    "family": "icap-pilot", 
+    "networkMode": "awsvpc", 
+    "executionRoleArn": "arn:aws:iam::141052326237:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "name": "icap-pilot", 
+            "image": "370377960141.dkr.ecr.eu-west-1.amazonaws.com/icap-pilot:latest", 
+            "portMappings": [
+                {
+                    "containerPort": 1344, 
+                    "hostPort": 1344, 
+                    "protocol": "tcp"
+                }
+            ],            
+            "essential": true
+        }
+    ], 
+    "requiresCompatibilities": [
+        "FARGATE"
+    ], 
+    "cpu": "256", 
+    "memory": "2048"
+}
